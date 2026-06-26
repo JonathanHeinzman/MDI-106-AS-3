@@ -36,7 +36,8 @@ struct AddTaskView: View {
                         }
                         dismiss()
                     }
-                    .disabled(title.isEmpty)
+                    .foregroundStyle (title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? .gray : .blue)
+                    .disabled(title.trimmingCharacters(in: .whitespacesAndNewlines) .isEmpty)
                 }
             }
         }
